@@ -20,6 +20,15 @@ import type { SearchResult } from '@/app/page';
 
 function MapController({ searchData }: { searchData: SearchResult }) {
   const map = useMap();
+
+  useEffect(() => {
+    const basePrefix = '<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>';
+    // Modificando o prefixo padrão para incluir nossa fonte também, dentro da MESMA caixa branca
+    map.attributionControl.setPrefix(
+      '<span style="display:block; text-align:right;">Mancha de Inundação: Prefeitura de Joinville</span>' + basePrefix
+    );
+  }, [map]);
+
   useEffect(() => {
     if (!searchData) return;
     if (searchData.isPolygon && searchData.bbox) {
@@ -103,7 +112,7 @@ function CustomToolbox({
   return (
     <>
       {/* Container Principal Direito/Inferior */}
-      <div className="absolute bottom-16 sm:bottom-6 right-4 z-[400] flex flex-col items-end gap-3 pointer-events-none">
+      <div className="absolute bottom-24 sm:bottom-12 right-4 z-[400] flex flex-col items-end gap-3 pointer-events-none">
 
         {/* Controles Acima do Botão de Camadas */}
         <div className="flex flex-col items-center w-12 gap-3 pb-1 pointer-events-none">
