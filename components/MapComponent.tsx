@@ -158,7 +158,7 @@ function CustomToolbox({
           </button>
 
           {/* FERRAMENTAS RECOLHÍVEIS (Esquerda do Botão de Camadas) */}
-          <div className={`flex flex-row-reverse items-center gap-2 transition-all duration-300 origin-right ${isExpanded ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 w-0 pointer-events-none'
+          <div className={`flex flex-row-reverse items-center gap-1.5 sm:gap-2 transition-all duration-300 origin-right ${isExpanded ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 w-0 pointer-events-none'
             }`}>
 
             {/* RÉGUA */}
@@ -171,23 +171,23 @@ function CustomToolbox({
                   setDistance(null);
                 }
               }}
-              className={`h-12 px-4 flex items-center gap-2 justify-center rounded-full shadow-lg font-sans font-bold text-sm transition-all border shrink-0 ${isMeasuring ? 'bg-indigo-600 text-white border-indigo-700' : 'bg-white text-slate-700 hover:text-indigo-600 hover:bg-slate-50 shadow-md border-transparent'
+              className={`h-12 px-2.5 sm:px-4 flex items-center gap-1.5 sm:gap-2 justify-center rounded-full shadow-lg font-sans font-bold text-xs sm:text-sm transition-all border shrink-0 ${isMeasuring ? 'bg-indigo-600 text-white border-indigo-700' : 'bg-white text-slate-700 hover:text-indigo-600 hover:bg-slate-50 shadow-md border-transparent'
                 }`}
               title="Medir Distância"
             >
-              <Ruler className="w-4 h-4" />
+              <Ruler className="w-4 h-4 shrink-0" />
               <span>Medir</span>
             </button>
 
             {/* MANCHA DE ENCHENTE */}
             <button
               onClick={() => setShowFloodLayer(!showFloodLayer)}
-              className={`h-12 flex flex-col items-center justify-center px-4 rounded-xl shadow-lg font-sans transition-all border-2 shrink-0 ${showFloodLayer ? 'bg-blue-50 border-blue-500 text-blue-700' : 'bg-white border-transparent text-slate-700 hover:bg-slate-50 hover:text-blue-600'
+              className={`h-12 flex flex-col items-center justify-center px-2 sm:px-4 rounded-xl shadow-lg font-sans transition-all border-2 shrink-0 ${showFloodLayer ? 'bg-blue-50 border-blue-500 text-blue-700' : 'bg-white border-transparent text-slate-700 hover:bg-slate-50 hover:text-blue-600'
                 }`}
               title="Mancha de Enchente"
             >
-              <span className="text-[9px] uppercase font-bold tracking-widest text-slate-400">Camada</span>
-              <span className="text-[12px] font-black leading-tight">Inundações</span>
+              <span className="text-[8px] sm:text-[9px] uppercase font-bold tracking-widest text-slate-400">Camada</span>
+              <span className="text-[11px] sm:text-[12px] font-black leading-tight">Inundações</span>
             </button>
 
             {/* MINIATURAS MAPA/SATÉLITE */}

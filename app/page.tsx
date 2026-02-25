@@ -125,15 +125,28 @@ export default function Home() {
       <div
         className="
           absolute
+          z-[500]
+          pointer-events-none
+          
+          /* Default Mobile (Telões/Telas médias - iPhone normais/Androids normais) */
           top-4
           right-4
           left-auto
           translate-x-0
+          
+          /* Telas MUITO pequenas (Apenas abaixo de 395px) vai pra baixo do logo */
+          max-[395px]:top-[72px]
+          max-[395px]:right-auto
+          max-[395px]:left-1/2
+          max-[395px]:-translate-x-1/2
+          max-[395px]:w-[92%]
+          max-[395px]:flex
+          max-[395px]:justify-center
+
+          /* Tablet em diante (Centralizado no Topo) */
           sm:right-auto
           sm:left-1/2
           sm:-translate-x-1/2
-          z-[500]
-          pointer-events-none
         "
       >
         <div className="pointer-events-auto">
@@ -147,7 +160,9 @@ export default function Home() {
               shadow-lg
               border
               border-slate-200/60
-              ${isSearchExpanded ? 'w-[260px] xs:w-[280px]' : 'w-[160px] xs:w-[180px]'}
+              ${isSearchExpanded
+                ? 'w-[260px] max-[395px]:w-full'
+                : 'w-[180px] max-[395px]:w-full'}
               sm:w-[300px]
               md:w-[380px]
               transition-all
