@@ -108,8 +108,12 @@ export default function Home() {
 
       {/* LOGO FLUTUANTE */}
       <div className="absolute top-4 left-4 sm:left-6 z-[500] pointer-events-auto flex items-center gap-2">
-        <div className="bg-blue-600 p-1.5 sm:p-2 rounded-xl shadow-md flex-shrink-0">
-          <MapIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+        <div className="bg-slate-100 p-0 sm:p-0.5 rounded-xl shadow-md border border-slate-300/50 flex-shrink-0 flex items-center justify-center overflow-hidden">
+          <img
+            src="/logo.png"
+            alt="GeoInunda JVE Logo"
+            className="w-11 h-11 sm:w-12 sm:h-12 object-contain mix-blend-multiply"
+          />
         </div>
         <h1
           className="block font-black text-slate-800 text-base sm:text-xl tracking-tight whitespace-nowrap"
