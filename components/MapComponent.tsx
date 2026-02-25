@@ -50,7 +50,14 @@ function CustomToolbox({
 
   useMapEvents({
     click(e) {
-      if (!isMeasuring) return;
+      if (!isMeasuring) {
+        // Se clicar no mapa sem estar na ferramenta e houver pinos, limpa os pinos
+        if (measurePoints.length > 0) {
+          setMeasurePoints([]);
+          setDistance(null);
+        }
+        return;
+      }
 
       if (measurePoints.length === 0) {
         setMeasurePoints([e.latlng]);
@@ -66,6 +73,18 @@ function CustomToolbox({
       }
     }
   });
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMeasurePoints([]);
+        setDistance(null);
+        setIsMeasuring(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [setIsMeasuring]);
 
   // Atualiza a distância em tempo real ao arrastar os marcadores
   const handleMarkerDrag = (e: L.LeafletEvent, index: number) => {
@@ -84,7 +103,7 @@ function CustomToolbox({
   return (
     <>
       {/* Container Principal Direito/Inferior */}
-      <div className="absolute bottom-6 right-4 z-[400] flex flex-col items-end gap-3 pointer-events-none">
+      <div className="absolute bottom-16 sm:bottom-6 right-4 z-[400] flex flex-col items-end gap-3 pointer-events-none">
 
         {/* Controles Acima do Botão de Camadas */}
         <div className="flex flex-col items-center w-12 gap-3 pb-1 pointer-events-none">

@@ -112,7 +112,7 @@ export default function Home() {
           <MapIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </div>
         <h1
-          className="hidden sm:block font-black text-slate-800 text-xl tracking-tight whitespace-nowrap"
+          className="block font-black text-slate-800 text-base sm:text-xl tracking-tight whitespace-nowrap"
           style={{
             textShadow: '0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,0.8), 0 2px 4px rgba(255,255,255,0.8)'
           }}
@@ -126,15 +126,19 @@ export default function Home() {
         className="
           absolute
           top-4
-          left-1/2
-          -translate-x-1/2
+          right-4
+          left-auto
+          translate-x-0
+          sm:right-auto
+          sm:left-1/2
+          sm:-translate-x-1/2
           z-[500]
           pointer-events-none
         "
       >
         <div className="pointer-events-auto">
           <div
-            className="
+            className={`
               flex
               items-center
               bg-white/95
@@ -143,10 +147,12 @@ export default function Home() {
               shadow-lg
               border
               border-slate-200/60
-              w-[280px]
+              ${isSearchExpanded ? 'w-[260px] xs:w-[280px]' : 'w-[160px] xs:w-[180px]'}
               sm:w-[300px]
               md:w-[380px]
-            "
+              transition-all
+              duration-300
+            `}
             onClick={() => !isSearchExpanded && setIsSearchExpanded(true)}
           >
             <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center flex-shrink-0 text-slate-500">
