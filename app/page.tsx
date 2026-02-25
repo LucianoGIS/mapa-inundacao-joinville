@@ -112,7 +112,7 @@ export default function Home() {
           <img
             src="/logo.png"
             alt="GeoInunda Logo"
-            className="w-11 h-11 sm:w-12 sm:h-12 object-contain mix-blend-multiply"
+            className="w-11 h-11 sm:w-12 sm:h-12 object-contain"
           />
         </div>
         <h1
@@ -175,13 +175,22 @@ export default function Home() {
             `}
             onClick={() => !isSearchExpanded && setIsSearchExpanded(true)}
           >
-            <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center flex-shrink-0 text-slate-500">
+            <button
+              className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center flex-shrink-0 text-slate-500 hover:text-blue-600 focus:outline-none transition-colors"
+              onClick={() => {
+                if (searchQuery.trim()) {
+                  handleSearch(searchQuery);
+                }
+              }}
+              title="Pesquisar"
+              aria-label="Pesquisar"
+            >
               {isSearching ? (
                 <Loader2 className="w-4 h-4 animate-spin text-blue-600" />
               ) : (
                 <Search className="w-4 h-4" />
               )}
-            </div>
+            </button>
 
             <input
               type="text"
