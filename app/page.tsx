@@ -147,7 +147,7 @@ export default function Home() {
               shadow-lg
               border
               border-slate-200/60
-              ${isSearchExpanded ? 'w-[260px] xs:w-[280px]' : 'w-[160px] xs:w-[180px]'}
+              ${isSearchExpanded ? 'w-[280px] xs:w-[300px]' : 'w-[180px] xs:w-[200px]'}
               sm:w-[300px]
               md:w-[380px]
               transition-all
