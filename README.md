@@ -29,15 +29,15 @@ Projeto de um Web App interativo para visualização de manchas de inundação e
 ```
 mapa-inundacao-joinville/
 ├── public/
-│   ├── data/
-│   │   └── manchas.geojson  ← DADOS DAS MANCHAS DE INUNDAÇÃO (Polígonos)
-├── src/
-│   ├── app/
-│   │   ├── globals.css      ← Estilos globais e Tailwind
-│   │   ├── layout.tsx       ← Root layout
-│   │   └── page.tsx         ← Página Principal (UI, Header, Search)
-│   ├── components/
-│   │   └── MapComponent.tsx ← Componente do Mapa (Leaflet, Camadas, Ferramentas)
+│   ├── logo.png             ← Logo oficial da aplicação
+│   └── data/
+│       └── manchas.geojson  ← DADOS DAS MANCHAS DE INUNDAÇÃO (Polígonos)
+├── app/
+│   ├── globals.css          ← Estilos globais e Tailwind
+│   ├── layout.tsx           ← Root layout e metadados
+│   └── page.tsx             ← Página Principal (UI, Header, Search)
+├── components/
+│   └── MapComponent.tsx     ← Componente do Mapa (Leaflet, Camadas, Ferramentas)
 ├── package.json
 └── tailwind.config.ts
 ```
