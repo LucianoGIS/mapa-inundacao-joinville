@@ -108,7 +108,7 @@ export default function Home() {
 
       {/* LOGO FLUTUANTE */}
       <div className="absolute top-4 left-4 sm:left-6 z-[500] pointer-events-auto flex items-center gap-2">
-        <div className="bg-slate-100 p-0 sm:p-0.5 rounded-xl shadow-md border border-slate-300/50 flex-shrink-0 flex items-center justify-center overflow-hidden">
+        <div className="bg-slate-100 pl-0 pt-0 pr-0.5 pb-0.5 sm:pl-0 sm:pt-0 sm:pr-0.5 sm:pb-0.5 rounded-xl shadow-md border border-slate-300/50 flex-shrink-0 flex items-center justify-center overflow-hidden">
           <img
             src="/logo.png"
             alt="GeoInunda Logo"
