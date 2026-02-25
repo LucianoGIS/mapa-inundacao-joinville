@@ -163,6 +163,7 @@ export default function Home() {
               ${isSearchExpanded
                 ? 'w-[260px] max-[395px]:w-full'
                 : 'w-[180px] max-[395px]:w-full'}
+              ${isSearchExpanded ? 'w-[280px] xs:w-[300px]' : 'w-[180px] xs:w-[200px]'}
               sm:w-[300px]
               md:w-[380px]
               transition-all
