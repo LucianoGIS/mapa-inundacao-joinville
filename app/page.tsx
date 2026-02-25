@@ -111,7 +111,7 @@ export default function Home() {
         <div className="bg-slate-100 p-0 sm:p-0.5 rounded-xl shadow-md border border-slate-300/50 flex-shrink-0 flex items-center justify-center overflow-hidden">
           <img
             src="/logo.png"
-            alt="GeoInunda JVE Logo"
+            alt="GeoInunda Logo"
             className="w-11 h-11 sm:w-12 sm:h-12 object-contain mix-blend-multiply"
           />
         </div>
@@ -121,7 +121,7 @@ export default function Home() {
             textShadow: '0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,0.8), 0 2px 4px rgba(255,255,255,0.8)'
           }}
         >
-          GeoInunda JVE
+          GeoInunda
         </h1>
       </div>
 
@@ -133,7 +133,8 @@ export default function Home() {
           pointer-events-none
           
           /* Default Mobile (Telões/Telas médias - iPhone normais/Androids normais) */
-          top-4
+          top-[21px]
+          sm:top-[23px]
           right-4
           left-auto
           translate-x-0
@@ -165,9 +166,8 @@ export default function Home() {
               border
               border-slate-200/60
               ${isSearchExpanded
-                ? 'w-[260px] max-[395px]:w-full'
-                : 'w-[180px] max-[395px]:w-full'}
-              ${isSearchExpanded ? 'w-[280px] xs:w-[300px]' : 'w-[180px] xs:w-[200px]'}
+                ? 'w-[215px] max-[395px]:w-full'
+                : 'w-[185px] max-[395px]:w-full'}
               sm:w-[300px]
               md:w-[380px]
               transition-all
