@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
-import { Search, Layers, Map as MapIcon, Loader2, Check } from 'lucide-react';
+import { Search, Layers, Map as MapIcon, Loader2, Check, X } from 'lucide-react';
 
 const Map = dynamic(() => import('@/components/MapComponent'), {
   ssr: false,
@@ -215,6 +215,22 @@ export default function Home() {
                 placeholder:text-slate-400
               "
             />
+
+            {searchQuery && (
+              <button
+                className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center flex-shrink-0 text-slate-400 hover:text-red-500 focus:outline-none transition-colors"
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSearchQuery('');
+                  setSearchData(null);
+                }}
+                title="Limpar pesquisa"
+                aria-label="Limpar pesquisa"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
           </div>
         </div>
       </div>
