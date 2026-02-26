@@ -66,33 +66,33 @@ export default function CookieConsent() {
                 </div>
             )}
 
-            <div className="fixed bottom-[130px] sm:bottom-28 left-1/2 -translate-x-1/2 w-[92%] sm:w-auto max-w-xl z-[9999] animate-in slide-in-from-bottom-5 fade-in duration-500">
-                <div className="bg-white/95 backdrop-blur-md p-3 sm:p-3.5 rounded-xl shadow-2xl border border-slate-200/60 flex flex-col sm:flex-row gap-3 items-start sm:items-center relative">
+            <div className="fixed bottom-[142px] sm:bottom-28 left-3 sm:left-1/2 translate-x-0 sm:-translate-x-1/2 w-[calc(100%-80px)] sm:w-auto max-w-xl z-[9999] animate-in slide-in-from-bottom-5 fade-in duration-500">
+                <div className="bg-white/95 backdrop-blur-md p-2.5 sm:p-3.5 rounded-xl shadow-2xl border border-slate-200/60 flex flex-col sm:flex-row gap-2 sm:gap-3 items-start sm:items-center relative">
 
                     {/* Ícone Estilizado - Menor */}
-                    <div className="flex bg-blue-100/50 border border-blue-200 p-2 rounded-lg shrink-0">
+                    <div className="hidden sm:flex bg-blue-100/50 border border-blue-200 p-2 rounded-lg shrink-0">
                         <Cookie className="w-5 h-5 text-blue-600" />
                     </div>
 
                     {/* Texto Informativo - Compacto */}
-                    <div className="flex-1 text-xs text-slate-600 pr-4 sm:pr-8">
+                    <div className="flex-1 text-[11px] sm:text-xs text-slate-600 pr-6 sm:pr-8">
                         <p className="leading-tight">
-                            Usamos cookies locais para aprimorar o mapa. Ao continuar, você concorda com nossos <button onClick={() => setShowTerms(true)} className="font-semibold text-blue-600 hover:underline">termos e cookies</button>.
+                            Usamos cookies locais para aprimorar o mapa. Ao continuar, você concorda com nossos <button onClick={() => setShowTerms(true)} className="font-semibold text-blue-600 hover:underline">termos.</button>
                         </p>
                     </div>
 
                     {/* Zona de Botões Interativos - Menores */}
-                    <div className="flex items-center gap-2 w-full sm:w-auto mt-0.5 sm:mt-0 justify-end shrink-0">
+                    <div className="flex items-center gap-2 w-full sm:w-auto mt-1.5 sm:mt-0 justify-end shrink-0 sm:pr-5">
                         <button
                             onClick={handleDecline}
-                            className="sm:hidden px-3 py-1.5 text-slate-500 hover:text-slate-700 font-medium text-xs transition-colors whitespace-nowrap"
+                            className="flex-1 sm:flex-none px-3 py-1.5 sm:px-3 sm:py-2 text-slate-600 hover:text-slate-800 hover:bg-slate-100 bg-slate-50 sm:bg-transparent border border-slate-200 sm:border-transparent rounded-lg font-medium text-[11px] sm:text-xs transition-colors whitespace-nowrap text-center"
                         >
-                            Agora não
+                            Rejeitar
                         </button>
 
                         <button
                             onClick={handleAccept}
-                            className="w-full sm:w-auto px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-lg shadow-md transition-all active:scale-95 whitespace-nowrap"
+                            className="flex-1 sm:flex-none px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[11px] sm:text-xs rounded-lg shadow-md transition-all active:scale-95 whitespace-nowrap text-center"
                         >
                             Concordar
                         </button>
@@ -101,10 +101,10 @@ export default function CookieConsent() {
                     {/* Botão de Fechar Superior */}
                     <button
                         onClick={handleDecline}
-                        className="absolute top-2 right-2 p-1 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-md transition-colors hidden sm:flex"
+                        className="absolute top-1 right-1 sm:top-1.5 sm:right-1.5 p-1 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-md transition-colors"
                         aria-label="Fechar Aviso de Configuração"
                     >
-                        <X className="w-3.5 h-3.5" />
+                        <X className="w-4 h-4" />
                     </button>
                 </div>
             </div>
