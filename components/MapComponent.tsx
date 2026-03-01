@@ -16,6 +16,13 @@ const customMarkerIcon = new L.Icon({
   popupAnchor: [1, -34],
 });
 
+const measureMarkerIcon = new L.DivIcon({
+  className: 'bg-transparent',
+  html: '<div class="w-4 h-4 bg-indigo-600 border-[2.5px] border-white rounded-full shadow-md hover:scale-125 transition-transform cursor-pointer"></div>',
+  iconSize: [16, 16],
+  iconAnchor: [8, 8],
+});
+
 import type { SearchResult } from '@/app/page';
 
 function MapController({ searchData }: { searchData: SearchResult }) {
@@ -214,7 +221,7 @@ function CustomToolbox({
         <>
           <Marker
             position={measurePoints[0]}
-            icon={customMarkerIcon}
+            icon={measureMarkerIcon}
             draggable={true}
             eventHandlers={{ drag: (e) => handleMarkerDrag(e, 0) }}
           />
@@ -222,7 +229,7 @@ function CustomToolbox({
             <>
               <Marker
                 position={measurePoints[1]}
-                icon={customMarkerIcon}
+                icon={measureMarkerIcon}
                 draggable={true}
                 eventHandlers={{ drag: (e) => handleMarkerDrag(e, 1) }}
               >
