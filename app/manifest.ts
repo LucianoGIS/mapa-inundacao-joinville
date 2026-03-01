@@ -1,0 +1,25 @@
+import type { MetadataRoute } from 'next'
+
+export default function manifest(): MetadataRoute.Manifest {
+    return {
+        name: 'Joinville GeoInunda | Mapa de Inundações',
+        short_name: 'GeoInunda',
+        description: 'Mapa interativo de suscetibilidade a inundações em Joinville, Santa Catarina.',
+        start_url: '/',
+        display: 'standalone',
+        background_color: '#f8fafc',
+        theme_color: '#0f172a',
+        icons: [
+            {
+                src: '/logo.png',
+                sizes: '192x192',
+                type: 'image/png',
+            },
+            {
+                src: '/logo.png',
+                sizes: '512x512',
+                type: 'image/png',
+            },
+        ],
+    }
+}

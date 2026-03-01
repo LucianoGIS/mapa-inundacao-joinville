@@ -111,18 +111,22 @@ export default function Home() {
         <div className="bg-slate-100 pl-0 pt-0 pr-0.5 pb-0.5 sm:pl-0 sm:pt-0 sm:pr-0.5 sm:pb-0.5 rounded-xl shadow-md border border-slate-300/50 flex-shrink-0 flex items-center justify-center overflow-hidden">
           <img
             src="/logo.png"
-            alt="GeoInunda Logo"
+            alt="GeoInunda Joinville - Mapa de Risco de Inundações e Enchentes"
+            title="GeoInunda Joinville"
             className="w-11 h-11 sm:w-12 sm:h-12 object-contain"
           />
         </div>
-        <h1
-          className="block font-black text-slate-800 text-base sm:text-xl tracking-tight whitespace-nowrap"
-          style={{
-            textShadow: '0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,0.8), 0 2px 4px rgba(255,255,255,0.8)'
-          }}
-        >
-          GeoInunda
-        </h1>
+        <div>
+          <h1
+            className="block font-black text-slate-800 text-base sm:text-xl tracking-tight whitespace-nowrap"
+            style={{
+              textShadow: '0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,0.8), 0 2px 4px rgba(255,255,255,0.8)'
+            }}
+          >
+            GeoInunda
+          </h1>
+          <h2 className="sr-only">Mapa Interativo de Suscetibilidade a Inundações em Joinville, Santa Catarina</h2>
+        </div>
       </div>
 
       {/* SEARCH BAR — TAMANHO FIXO CONTROLADO */}
@@ -201,6 +205,7 @@ export default function Home() {
                 if (!searchQuery) setIsSearchExpanded(false);
               }}
               placeholder="Pesquise a moradia..."
+              aria-label="Pesquisar endereço para verificar risco de enchente em Joinville"
               autoFocus={isSearchExpanded}
               className="
                 flex-1
